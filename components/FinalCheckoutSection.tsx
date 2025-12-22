@@ -36,6 +36,7 @@ export const FinalCheckoutSection: React.FC = () => {
                         <Button
                             variant="primary"
                             className="!bg-[var(--color-sage)] !text-white !border-none !py-6 !px-12 !text-xl !rounded-full w-full md:w-auto shadow-[0_0_50px_rgba(164,172,134,0.4)] hover:shadow-[0_0_80px_rgba(164,172,134,0.6)]"
+                            onClick={() => window.open('https://pay.kiwify.com.br/IjhPkkh', '_blank')}
                         >
                             Começar Agora <ArrowRight className="ml-2 w-6 h-6 inline-block" />
                         </Button>

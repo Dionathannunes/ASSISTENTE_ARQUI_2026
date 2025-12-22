@@ -67,7 +67,11 @@ export const PricingSection: React.FC = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <Button variant="primary" className="!bg-[var(--color-dun)] !text-[var(--color-ebony)] !border-none !rounded-full !py-5 !px-12 !text-xl w-full md:w-auto shadow-xl hover:bg-white transition-all">
+                            <Button
+                                variant="primary"
+                                className="!bg-[var(--color-dun)] !text-[var(--color-ebony)] !border-none !rounded-full !py-5 !px-12 !text-xl w-full md:w-auto shadow-xl hover:bg-white transition-all"
+                                onClick={() => window.open('https://pay.kiwify.com.br/IjhPkkh', '_blank')}
+                            >
                                 Começar agora
                             </Button>
                         </motion.div>
