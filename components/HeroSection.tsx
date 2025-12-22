@@ -65,16 +65,22 @@ export const HeroSection: React.FC = () => {
                         >
                             menos ansiedade.
                         </motion.span>
-                        <motion.span
-                            className="text-[24px] md:text-[48px] opacity-90 italic tracking-normal"
-                            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.7)' }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 0.8 }}
-                            transition={{ delay: 1.2 }}
+                    </h1>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.2 }}
+                        className="mb-12 relative"
+                    >
+                        <span
+                            className="text-[24px] md:text-[40px] font-light italic tracking-wide text-white/90 relative z-10 block"
+                            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
                         >
                             O resto é com você.
-                        </motion.span>
-                    </h1>
+                        </span>
+                        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 bg-[var(--color-dun)]/50 rounded-full" />
+                    </motion.div>
 
                     <motion.p
                         className="text-[var(--color-bone)] text-base md:text-2xl font-light mb-10 max-w-xl mx-auto leading-relaxed opacity-95"

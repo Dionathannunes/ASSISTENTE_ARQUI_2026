@@ -1,81 +1,67 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Section, SectionHeader, Pill } from './UI';
-import { ArrowRight, Check, X } from 'lucide-react';
-
-// Stagger container
-const staggerContainer = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: { staggerChildren: 0.03, delayChildren: 0.1 }
-    }
-};
-
-// Compact Item Animation
-const itemAnim = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: { type: "tween", duration: 0.2 }
-    }
-};
+import { CheckCircle2, Circle } from 'lucide-react';
 
 export const TransformationSection: React.FC = () => {
     const transformations = [
-        { before: "Abria o projeto e não sabia por onde começar", after: "Abre e já sabe exatamente o que fazer" },
-        { before: "Refazia três vezes porque não tinha certeza", after: "Faz uma vez. Com clareza. E entrega" },
-        { before: "Virava a noite sem saber se estava certo", after: "Trabalha com direção. E dorme tranquila" },
-        { before: "Renderização travava e perdia horas", after: "Renderiza em segundos. Sem travar" },
-        { before: "Referências perdidas em 50 pastas", after: "Tudo organizado. Acesso em 2 cliques" },
-        { before: "Entregava no desespero de última hora", after: "Entrega no prazo. Sem pânico" },
-        { before: "Se comparava e achava que não ia dar conta", after: "Foca no seu projeto. E avança" },
-        { before: "Perdia tempo procurando o que fazer", after: "Executa direto. Sem desperdício" }
+        { title: "Clareza", before: "Não sabe por onde começar", after: "Abre e já sabe exatamente o que fazer" },
+        { title: "Confiança", before: "Refaz 3x sem certeza", after: "Faz uma vez e entrega" },
+        { title: "Paz", before: "Vira a noite com ansiedade", after: "Trabalha com direção e dorme" },
+        { title: "Performance", before: "Renderização trava e demora", after: "Renderiza em segundos" },
+        { title: "Organização", before: "Arquivos perdidos", after: "Acesso em 2 cliques" },
+        { title: "Resultado", before: "Entrega no desespero", after: "Entrega no prazo, sem pânico" }
     ];
 
     return (
-        <Section id="transformation" className="bg-[var(--color-bone)] py-10 relative overflow-hidden">
+        <Section id="transformation" className="bg-white py-24 relative overflow-hidden">
+            {/* Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-sage)]/5 to-transparent opacity-50" />
 
-            <div className="text-center mb-6 relative z-10">
-                <Pill className="mb-3 bg-[var(--color-sage)]/10 text-[var(--color-reseda)] border-none text-[10px]">A Mudança Real</Pill>
-                <SectionHeader title="De perdida a preparada" centered className="mb-0 !text-[22px] md:!text-[32px]" />
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="text-center mb-16">
+                    <Pill className="mb-6 bg-[var(--color-sage)]/10 text-[var(--color-reseda)] border-none">A Mudança Real</Pill>
+                    <SectionHeader title="De perdida a preparada" centered />
+                </div>
+
+                <div className="relative max-w-4xl mx-auto">
+                    {/* Vertical Line */}
+                    <div className="absolute left-[50%] top-0 bottom-0 w-px bg-[var(--color-dun)]/30 hidden md:block" />
+
+                    <div className="space-y-12 md:space-y-16">
+                        {transformations.map((item, index) => (
+                            <motion.div
+                                Key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: index * 0.1 }}
+                                className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center group"
+                            >
+                                {/* Center Dot */}
+                                <div className="absolute left-[50%] top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-white border-2 border-[var(--color-dun)] rounded-full z-10 hidden md:block group-hover:scale-125 group-hover:border-[var(--color-sage)] transition-all duration-300" />
+
+                                {/* Before (Left Side) */}
+                                <div className="text-center md:text-right order-2 md:order-1 relative p-6 bg-gray-50/50 rounded-2xl md:bg-transparent md:p-0 md:rounded-none">
+                                    <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-200 px-3 py-1 rounded-full text-xs font-bold text-gray-500 uppercase">Antes</div>
+                                    <h4 className="text-[var(--color-reseda)] font-medium mb-1 opacity-60 text-sm uppercase tracking-wider">{item.title}</h4>
+                                    <p className="text-[var(--color-reseda)] text-lg font-light line-through decoration-red-300/50 decoration-1">{item.before}</p>
+                                </div>
+
+                                {/* After (Right Side) */}
+                                <div className="text-center md:text-left order-1 md:order-2 relative p-6 bg-green-50/30 border border-green-100/50 rounded-2xl md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
+                                    <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-sage)] px-3 py-1 rounded-full text-xs font-bold text-white uppercase">Depois</div>
+                                    <h4 className="text-[var(--color-sage)] font-medium mb-1 opacity-80 text-sm uppercase tracking-wider hidden md:block">{item.title}</h4>
+                                    <p className="text-[var(--color-ebony)] text-xl font-medium flex items-center justify-center md:justify-start gap-2">
+                                        <CheckCircle2 className="w-5 h-5 text-[var(--color-sage)] shrink-0" />
+                                        {item.after}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
             </div>
-
-            <motion.div
-                className="max-w-2xl mx-auto grid grid-cols-1 gap-1.5 relative z-10 px-4"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-50px" }}
-            >
-                {transformations.map((item, i) => (
-                    <motion.div key={i} variants={itemAnim}>
-                        <div className="bg-white rounded-xl px-3 py-2 flex items-center gap-2 border border-gray-100/50 hover:shadow-sm transition-shadow">
-
-                            {/* Before */}
-                            <div className="flex items-center gap-1.5 flex-1 min-w-0">
-                                <X className="w-3.5 h-3.5 text-red-400 shrink-0" />
-                                <p className="text-xs text-[var(--color-reseda)] leading-tight truncate opacity-70">
-                                    {item.before}
-                                </p>
-                            </div>
-
-                            {/* Arrow */}
-                            <ArrowRight className="w-3 h-3 text-[var(--color-dun)] shrink-0" />
-
-                            {/* After */}
-                            <div className="flex items-center gap-1.5 flex-1 min-w-0">
-                                <Check className="w-3.5 h-3.5 text-[var(--color-sage)] shrink-0" />
-                                <p className="text-xs font-medium text-[var(--color-ebony)] leading-tight truncate">
-                                    {item.after}
-                                </p>
-                            </div>
-
-                        </div>
-                    </motion.div>
-                ))}
-            </motion.div>
         </Section>
     );
 };

@@ -19,10 +19,10 @@ export const FinalCheckoutSection: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-8 md:p-16 shadow-2xl"
                 >
-                    <Pill className="mb-8 border-white/20 text-white bg-white/5 mx-auto">Última chance de mudar 2026</Pill>
 
-                    <h2 className="text-4xl md:text-7xl font-['Aboreto'] mb-2 tracking-tighter">
-                        R$ 59<span className="text-2xl md:text-4xl opacity-60">/ano</span>
+
+                    <h2 className="text-4xl md:text-7xl font-['Aboreto'] mb-2 tracking-tighter text-[var(--color-dun)] drop-shadow-xl">
+                        R$ 59<span className="text-2xl md:text-4xl opacity-80 font-normal">/ano</span>
                     </h2>
                     <p className="text-[var(--color-dun)] text-lg uppercase tracking-[0.2em] mb-10 font-bold">
                         Menos de um café por mês

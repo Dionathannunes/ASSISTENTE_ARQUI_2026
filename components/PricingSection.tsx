@@ -39,7 +39,7 @@ export const PricingSection: React.FC = () => {
                             <span className="text-3xl md:text-4xl font-medium text-white opacity-80 relative top-1">R$</span>
                             <motion.span
                                 className="text-[90px] md:text-[120px] leading-none font-bold tracking-tighter text-white"
-                                style={{ textShadow: '0 0 60px rgba(255,255,255,0.5), 0 0 120px rgba(204,191,163,0.4)' }}
+                                style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}
                                 initial={{ scale: 3, opacity: 0 }}
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.7, type: "spring", stiffness: 100 }}

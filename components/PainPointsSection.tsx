@@ -1,94 +1,27 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Section, SectionHeader, Card } from './UI';
-import { X, ChevronDown, ChevronUp } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Section, SectionHeader } from './UI';
+import { XCircle } from 'lucide-react';
 
-// Stagger container for "addictive" reveal
-const staggerContainer = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.2
-        }
-    }
-};
-
-// Bouncy spring item animation
-const springItem = {
-    hidden: { opacity: 0, x: 100, scale: 0.8, filter: "blur(10px)" },
-    show: {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        filter: "blur(0px)",
-        transition: { type: "spring", stiffness: 100, damping: 12 }
-    }
-};
-
-// Collapsible Pain Card Component
-const PainCard: React.FC<{ text: string; index: number; isExpanded: boolean; onToggle: () => void }> = ({
-    text, index, isExpanded, onToggle
-}) => {
-    // Split text into title (first few words) and content
-    const words = text.split(' ');
-    const title = words.slice(0, 4).join(' ') + (words.length > 4 ? '...' : '');
-
-    return (
-        <motion.div variants={springItem}>
-            <Card
-                variant="notification"
-                className="!rounded-[20px] !p-0 overflow-hidden bg-gray-50 border-l-4 border-red-200 cursor-pointer"
-                onClick={onToggle}
-                whileHover={{ scale: 1.01, x: -4 }}
-                whileTap={{ scale: 0.99 }}
-            >
-                <div className="p-5 flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center shrink-0">
-                        <X className="w-4 h-4 text-red-500" />
-                    </div>
-
-                    <div className="flex-1 min-w-0">
-                        <AnimatePresence mode="wait">
-                            {isExpanded ? (
-                                <motion.p
-                                    key="expanded"
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: 'auto' }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                                    className="text-[var(--color-ebony)] text-lg leading-snug font-normal"
-                                >
-                                    {text}
-                                </motion.p>
-                            ) : (
-                                <motion.p
-                                    key="collapsed"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                    className="text-[var(--color-ebony)] text-lg leading-snug font-normal truncate"
-                                >
-                                    {title}
-                                </motion.p>
-                            )}
-                        </AnimatePresence>
-                    </div>
-
-                    <motion.div
-                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                        className="shrink-0"
-                    >
-                        <ChevronDown className="w-5 h-5 text-[var(--color-reseda)]" />
-                    </motion.div>
-                </div>
-            </Card>
-        </motion.div>
-    );
-};
+const PainCard: React.FC<{ text: string; index: number }> = ({ text, index }) => (
+    <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1, duration: 0.5 }}
+        className="group relative h-full"
+    >
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-dun)]/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="relative bg-white/60 backdrop-blur-md border border-white/80 p-6 md:p-8 rounded-2xl h-full shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-center">
+            <div className="flex items-start gap-4">
+                <XCircle className="w-8 h-8 text-red-300/80 shrink-0 mt-1" strokeWidth={1.5} />
+                <p className="text-[var(--color-ebony)] text-lg font-light leading-relaxed">
+                    {text}
+                </p>
+            </div>
+        </div>
+    </motion.div>
+);
 
 export const PainPointsSection: React.FC = () => {
     const pains = [
@@ -99,83 +32,28 @@ export const PainPointsSection: React.FC = () => {
         "Entrega no prazo. Mas sai destruída mentalmente."
     ];
 
-    // Track which cards are expanded (first 2 expanded by default)
-    const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set([0, 1]));
-
-    const toggleCard = (index: number) => {
-        setExpandedCards(prev => {
-            const newSet = new Set(prev);
-            if (newSet.has(index)) {
-                newSet.delete(index);
-            } else {
-                newSet.add(index);
-            }
-            return newSet;
-        });
-    };
-
-    const expandAll = () => setExpandedCards(new Set(pains.map((_, i) => i)));
-    const collapseAll = () => setExpandedCards(new Set());
-
     return (
-        <Section id="pain-points" className="bg-white relative overflow-hidden">
-            <div className="text-center mb-8 max-w-2xl mx-auto relative z-10">
-                <SectionHeader
-                    title="Você já sabe como é"
-                    subtitle="Não precisa explicar. Você sente isso todo semestre."
-                    centered
-                />
+        <Section id="pain-points" className="bg-[var(--color-bone)]/30 relative overflow-hidden py-24">
+            {/* Background Texture */}
+            <div className="absolute inset-0 opacity-40 bg-[url('/assets/images/noise.png')] mix-blend-overlay pointer-events-none" />
 
-                {/* Expand/Collapse All Toggle */}
-                <motion.button
-                    onClick={expandedCards.size === pains.length ? collapseAll : expandAll}
-                    className="mt-4 text-sm text-[var(--color-reseda)] hover:text-[var(--color-ebony)] transition-colors flex items-center gap-1 mx-auto"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    {expandedCards.size === pains.length ? (
-                        <>
-                            <ChevronUp className="w-4 h-4" />
-                            Recolher tudo
-                        </>
-                    ) : (
-                        <>
-                            <ChevronDown className="w-4 h-4" />
-                            Expandir tudo
-                        </>
-                    )}
-                </motion.button>
-            </div>
-
-            {/* Staggered Cards with Spring Physics */}
-            <motion.div
-                className="max-w-lg mx-auto relative z-10 space-y-3"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-            >
-                {pains.map((text, index) => (
-                    <PainCard
-                        key={index}
-                        text={text}
-                        index={index}
-                        isExpanded={expandedCards.has(index)}
-                        onToggle={() => toggleCard(index)}
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="max-w-2xl mx-auto text-center mb-16">
+                    <SectionHeader
+                        title="Você já sabe como é"
+                        subtitle="O ciclo que se repete todo semestre."
+                        centered
                     />
-                ))}
-            </motion.div>
+                </div>
 
-            {/* Background Decorations */}
-            <motion.div
-                className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.3 }}
-                viewport={{ once: true }}
-            >
-                <img src="/assets/images/icons/11.png" className="absolute top-20 right-0 w-64 h-64 opacity-10" />
-                <img src="/assets/images/icons/13.png" className="absolute bottom-20 left-0 w-64 h-64 opacity-10" />
-            </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+                    {pains.map((text, index) => (
+                        <div key={index} className={index === 4 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""}>
+                            <PainCard text={text} index={index} />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </Section>
     );
 };
