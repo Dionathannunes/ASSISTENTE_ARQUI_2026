@@ -31,14 +31,15 @@ export const PricingSection: React.FC = () => {
                         </motion.div>
 
                         <motion.div
-                            className="flex items-center justify-center gap-2 mb-4"
+                            className="flex items-center justify-center gap-2 mb-6"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, type: "spring" }}
                         >
-                            <span className="text-4xl font-light text-[var(--color-dun)] opacity-50 relative top-1">R$</span>
+                            <span className="text-3xl md:text-4xl font-medium text-white opacity-80 relative top-1">R$</span>
                             <motion.span
-                                className="text-[80px] md:text-[100px] leading-none font-bold tracking-tighter text-[var(--color-white)]"
+                                className="text-[90px] md:text-[120px] leading-none font-bold tracking-tighter text-white"
+                                style={{ textShadow: '0 0 60px rgba(255,255,255,0.5), 0 0 120px rgba(204,191,163,0.4)' }}
                                 initial={{ scale: 3, opacity: 0 }}
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
@@ -46,18 +47,17 @@ export const PricingSection: React.FC = () => {
                                 59
                             </motion.span>
                             <div className="flex flex-col items-start">
-                                <span className="text-xl font-light text-[var(--color-dun)]">/ano</span>
+                                <span className="text-xl md:text-2xl font-medium text-white opacity-80">/ano</span>
                             </div>
                         </motion.div>
 
                         <motion.p
-                            className="text-[var(--color-bone)] text-lg mb-10 max-w-sm mx-auto opacity-90"
+                            className="text-white text-xl md:text-2xl mb-10 max-w-sm mx-auto font-light tracking-wide"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.9 }}
                         >
-                            Menos que você gasta num final de semana. <br />
-                            <span className="text-[var(--color-dun)] font-medium">Mais clareza no semestre inteiro.</span>
+                            Menos de um café por mês
                         </motion.p>
 
                         <motion.div

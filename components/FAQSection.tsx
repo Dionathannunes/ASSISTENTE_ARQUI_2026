@@ -42,7 +42,7 @@ const FAQItem: React.FC<{ question: string; answer: string; index: number }> = (
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ type: "spring", stiffness: 150, damping: 20 }}
                         >
-                            <div className="p-5 md:p-6 pt-0 text-[var(--color-reseda)] leading-relaxed border-t border-gray-100">
+                            <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0 text-[var(--color-reseda)] text-sm leading-relaxed border-t border-gray-100 text-center">
                                 {answer}
                             </div>
                         </motion.div>

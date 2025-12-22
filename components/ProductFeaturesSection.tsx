@@ -51,12 +51,12 @@ export const ProductFeaturesSection: React.FC = () => {
                 {/* Feature 1: Render AI (Large) */}
                 <Card variant="primary" className="md:col-span-8 !rounded-[32px] overflow-hidden p-0 min-h-[300px] border-0 shadow-lg relative bg-black group">
                     <div className="absolute inset-0 z-0">
-                        <img src="/assets/images/platform/Geração de Imagens.png" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="IA" loading="lazy" decoding="async" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                        <img src="/assets/images/platform/Geração de Imagens.png" className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" alt="IA" loading="lazy" decoding="async" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
                     </div>
                     <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-end md:justify-center max-w-xl">
-                        <h3 className="text-2xl md:text-3xl text-white font-medium mb-2 drop-shadow-md">Gere imagens pro seu projeto com IA.</h3>
-                        <p className="text-white/90 font-light text-lg md:text-xl drop-shadow-sm">Rápido. Direto. Sem enrolação.</p>
+                        <h3 className="text-2xl md:text-3xl text-white font-medium mb-2" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,1)' }}>Gere imagens pro seu projeto com IA.</h3>
+                        <p className="text-white font-light text-lg md:text-xl" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>Rápido. Direto. Sem enrolação.</p>
                     </div>
                 </Card>
 

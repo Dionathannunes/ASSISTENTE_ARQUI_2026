@@ -52,7 +52,7 @@ export const HeroSection: React.FC = () => {
                     className="max-w-3xl"
                 >
                     {/* Staggered Word Reveal for H1 */}
-                    <h1 className="text-white text-[32px] md:text-[64px] font-normal leading-[1.1] md:leading-[1.0] mb-6 font-['Aboreto'] tracking-tighter drop-shadow-md">
+                    <h1 className="text-white text-[32px] md:text-[64px] font-normal leading-[1.1] md:leading-[1.0] mb-6 font-['Aboreto'] tracking-tighter" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                         <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
                             Clareza, execução e
                         </motion.span>
@@ -65,9 +65,9 @@ export const HeroSection: React.FC = () => {
                         >
                             menos ansiedade.
                         </motion.span>
-                        <br />
                         <motion.span
-                            className="text-[24px] md:text-[48px] opacity-80 italic tracking-normal"
+                            className="text-[24px] md:text-[48px] opacity-90 italic tracking-normal"
+                            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.7)' }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.8 }}
                             transition={{ delay: 1.2 }}
@@ -77,7 +77,8 @@ export const HeroSection: React.FC = () => {
                     </h1>
 
                     <motion.p
-                        className="text-[var(--color-bone)] text-base md:text-2xl font-light mb-10 max-w-xl mx-auto leading-relaxed opacity-90"
+                        className="text-[var(--color-bone)] text-base md:text-2xl font-light mb-10 max-w-xl mx-auto leading-relaxed opacity-95"
+                        style={{ textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.4 }}
@@ -92,7 +93,7 @@ export const HeroSection: React.FC = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <Button variant="primary" className="!bg-[var(--color-dun)] !text-[var(--color-ebony)] !border-none !rounded-full !py-4 md:!py-5 !px-8 md:!px-10 !text-lg md:!text-xl shadow-[0_0_40px_rgba(204,191,163,0.4)] w-[90%] md:w-auto">
+                        <Button variant="primary" className="!bg-[var(--color-dun)] !text-[var(--color-ebony)] !border-none !rounded-full !py-4 md:!py-5 !px-8 md:!px-10 !text-lg md:!text-xl shadow-[0_0_40px_rgba(204,191,163,0.4)] w-[90%] md:w-auto" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                             Não vou repetir 2025
                         </Button>
                     </motion.div>
