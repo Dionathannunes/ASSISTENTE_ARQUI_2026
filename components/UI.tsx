@@ -212,3 +212,28 @@ export const Pill: React.FC<{ children: React.ReactNode; className?: string }> =
     {children}
   </span>
 );
+
+export const HighlightCircle: React.FC<{ delay?: number; className?: string }> = ({ delay = 0, className = '' }) => (
+  <svg
+    className={`absolute pointer-events-none ${className}`}
+    viewBox="0 0 300 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+  >
+    <motion.path
+      d="M20,50 C20,20 80,10 150,10 C220,10 280,20 280,50 C280,80 220,90 150,90 C80,90 20,80 20,50 Z"
+      stroke="var(--color-dun)"
+      strokeWidth="3" /* Slightly thicker for visibility but still elegant */
+      fill="none"
+      initial={{ pathLength: 0, opacity: 0 }}
+      animate={{ pathLength: 1, opacity: 1 }}
+      transition={{
+        duration: 1.2,
+        ease: "easeInOut",
+        delay: delay
+      }}
+      style={{ filter: 'drop-shadow(0 0 8px rgba(204,191,163,0.5))' }} /* Glow effect for premium feel */
+    />
+  </svg>
+);

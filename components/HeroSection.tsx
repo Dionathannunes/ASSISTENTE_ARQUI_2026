@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { Section, Button, Pill, FloatingElement } from './UI';
+import { Section, Button, Pill, FloatingElement, HighlightCircle } from './UI';
 
 export const HeroSection: React.FC = () => {
     const { scrollY } = useScroll();
@@ -58,12 +58,13 @@ export const HeroSection: React.FC = () => {
                         </motion.span>
                         <br />
                         <motion.span
-                            className="text-[var(--color-dun)]"
+                            className="text-[var(--color-dun)] relative inline-block"
                             initial={{ opacity: 0, y: 20, scale: 1.2 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ delay: 0.8, type: "spring" }}
                         >
-                            menos ansiedade.
+                            <HighlightCircle delay={1.4} className="-top-2 -left-4 w-[110%] h-[120%] z-0" />
+                            <span className="relative z-10">menos ansiedade.</span>
                         </motion.span>
                     </h1>
 
