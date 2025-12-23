@@ -63,7 +63,7 @@ export const HeroSection: React.FC = () => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ delay: 0.8, type: "spring" }}
                         >
-                            <HighlightCircle delay={1.4} className="-top-2 -left-4 w-[110%] h-[120%] z-0" />
+                            <HighlightCircle delay={1.4} className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[280%] z-0" />
                             <span className="relative z-10">menos ansiedade.</span>
                         </motion.span>
                     </h1>
