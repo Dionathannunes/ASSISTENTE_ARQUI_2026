@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { HeroSection } from './components/HeroSection';
 import { PainPointsSection } from './components/PainPointsSection';
 import { KeyInsightSection } from './components/KeyInsightSection';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <FounderSection />
         <FinalCheckoutSection />
       </main>
+      <SpeedInsights />
     </div>
   );
 };
