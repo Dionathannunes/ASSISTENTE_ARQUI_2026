@@ -44,7 +44,7 @@ export const PricingSection: React.FC = () => {
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
                             >
-                                59
+                                67
                             </motion.span>
                             <div className="flex flex-col items-start">
                                 <span className="text-xl md:text-2xl font-medium text-white opacity-80">/ano</span>
@@ -84,7 +84,7 @@ export const PricingSection: React.FC = () => {
                         </div>
                     </Card>
                 </motion.div>
-            </div>
-        </Section>
+            </div >
+        </Section >
     );
 };
