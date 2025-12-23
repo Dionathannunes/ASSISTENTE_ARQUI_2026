@@ -25,7 +25,7 @@ export const KeyInsightSection: React.FC = () => {
                     {/* Simplified Motion Wrapper */}
                     <motion.div>
                         {/* Word-by-word animated title with Stagger */}
-                        <h2 className="text-[36px] md:text-[60px] font-['Aboreto'] leading-tight mb-8 flex flex-wrap justify-center gap-x-4 text-white">
+                        <h2 className="text-3xl md:text-[60px] font-['Aboreto'] leading-tight mb-8 flex flex-wrap justify-center gap-x-4 text-white">
                             {words.map((word, i) => (
                                 <motion.span
                                     key={i}

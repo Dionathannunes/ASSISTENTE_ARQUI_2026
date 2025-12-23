@@ -31,22 +31,24 @@ export const PricingSection: React.FC = () => {
                         </motion.div>
 
                         <motion.div
-                            className="flex items-center justify-center gap-2 mb-6"
+                            className="flex flex-col md:flex-row items-center justify-center gap-2 mb-6"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, type: "spring" }}
                         >
-                            <span className="text-3xl md:text-4xl font-medium text-white opacity-80 relative top-1">R$</span>
-                            <motion.span
-                                className="text-[90px] md:text-[120px] leading-none font-bold tracking-tighter text-white"
-                                style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}
-                                initial={{ scale: 3, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
-                            >
-                                67
-                            </motion.span>
-                            <div className="flex flex-col items-start">
+                            <div className="flex items-center justify-center">
+                                <span className="text-3xl md:text-4xl font-medium text-white opacity-80 relative top-1">R$</span>
+                                <motion.span
+                                    className="text-[80px] md:text-[120px] leading-none font-bold tracking-tighter text-white"
+                                    style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}
+                                    initial={{ scale: 3, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
+                                >
+                                    67
+                                </motion.span>
+                            </div>
+                            <div className="flex flex-col items-start mt-2 md:mt-0">
                                 <span className="text-xl md:text-2xl font-medium text-white opacity-80">/ano</span>
                             </div>
                         </motion.div>

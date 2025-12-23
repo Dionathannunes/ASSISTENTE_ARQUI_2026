@@ -33,7 +33,7 @@ export const PainPointsSection: React.FC = () => {
     ];
 
     return (
-        <Section id="pain-points" className="bg-[var(--color-bone)]/30 relative overflow-hidden py-24">
+        <Section id="pain-points" className="bg-[var(--color-bone)]/30 relative overflow-hidden py-16 md:py-24">
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-40 bg-[url('/assets/images/noise.png')] mix-blend-overlay pointer-events-none" />
 

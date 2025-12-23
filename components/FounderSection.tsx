@@ -44,7 +44,7 @@ export const FounderSection: React.FC = () => {
                             <span className="font-normal border-b-2 border-[var(--color-sage)]">entende você.</span>
                         </motion.h2>
 
-                        <div className="space-y-4 text-lg text-[var(--color-reseda)] font-light leading-relaxed">
+                        <div className="space-y-4 text-lg md:text-xl text-[var(--color-reseda)] font-light leading-relaxed">
                             {[
                                 "Oie, eu sou a Andri.",
                                 "Ainda estou na faculdade. Penúltimo semestre.",

@@ -52,7 +52,7 @@ export const TransformationSection: React.FC = () => {
                                 <div className="text-center md:text-left order-1 md:order-2 relative p-6 bg-green-50/30 border border-green-100/50 rounded-2xl md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
                                     <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-sage)] px-3 py-1 rounded-full text-xs font-bold text-white uppercase">Depois</div>
                                     <h4 className="text-[var(--color-sage)] font-medium mb-1 opacity-80 text-sm uppercase tracking-wider hidden md:block">{item.title}</h4>
-                                    <p className="text-[var(--color-ebony)] text-xl font-medium flex items-center justify-center md:justify-start gap-2">
+                                    <p className="text-[var(--color-ebony)] text-xl font-medium flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-0">
                                         <CheckCircle2 className="w-5 h-5 text-[var(--color-sage)] shrink-0" />
                                         {item.after}
                                     </p>

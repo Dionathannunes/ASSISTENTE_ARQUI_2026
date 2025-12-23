@@ -99,7 +99,7 @@ export const Section: React.FC<SectionProps> = ({
   return (
     <section
       id={id}
-      className={`min-h-[auto] md:min-h-screen w-full flex flex-col justify-center py-8 md:py-20 relative overflow-hidden ${className}`}
+      className={`min-h-[auto] md:min-h-screen w-full flex flex-col justify-center py-16 md:py-20 relative overflow-hidden ${className}`}
       {...props}
     >
       <motion.div
@@ -179,7 +179,7 @@ export const SectionHeader: React.FC<{ title: string; subtitle?: string; centere
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-[28px] md:text-[40px] text-[var(--color-ebony)] mb-4 font-['Aboreto'] font-normal leading-tight"
+        className="text-3xl md:text-[40px] text-[var(--color-ebony)] mb-4 font-['Aboreto'] font-normal leading-tight"
       >
         {title}
       </motion.h2>
@@ -189,7 +189,7 @@ export const SectionHeader: React.FC<{ title: string; subtitle?: string; centere
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-[16px] md:text-[20px] text-[var(--color-reseda)] font-light leading-relaxed max-w-2xl"
+          className="text-base md:text-[20px] text-[var(--color-reseda)] font-light leading-relaxed max-w-2xl"
           style={{ margin: centered ? '0 auto' : undefined }}
         >
           {subtitle}
