@@ -25,6 +25,7 @@ const App: React.FC = () => {
         <PricingSection />
         <FAQSection />
         <FounderSection />
+        <FinalCheckoutSection />
       </main>
     </div>
   );

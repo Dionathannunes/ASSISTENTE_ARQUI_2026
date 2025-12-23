@@ -60,21 +60,28 @@ export const PricingSection: React.FC = () => {
                             Menos de um café por mês
                         </motion.p>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1, type: "spring" }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <Button
-                                variant="primary"
-                                className="!bg-[var(--color-dun)] !text-[var(--color-ebony)] !border-none !rounded-full !py-5 !px-12 !text-xl w-full md:w-auto shadow-xl hover:bg-white transition-all"
-                                onClick={() => window.open('https://pay.kiwify.com.br/IjhPkkh', '_blank')}
+                        <div className="relative z-50">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1, type: "spring" }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="cursor-pointer"
                             >
-                                Começar agora
-                            </Button>
-                        </motion.div>
+                                <Button
+                                    variant="primary"
+                                    className="!bg-[var(--color-dun)] !text-[var(--color-ebony)] !border-none !rounded-full !py-5 !px-12 !text-xl w-full md:w-auto shadow-xl hover:bg-white transition-all cursor-pointer relative z-50"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        window.open('https://pay.kiwify.com.br/IjhPkkh', '_blank');
+                                    }}
+                                >
+                                    Começar agora
+                                </Button>
+                            </motion.div>
+                        </div>
                     </Card>
                 </motion.div>
             </div>
