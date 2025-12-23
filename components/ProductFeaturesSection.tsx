@@ -22,9 +22,6 @@ export const ProductFeaturesSection: React.FC = () => {
 
             {/* Header */}
             <div className="container mx-auto px-6 text-center mb-16 relative z-10">
-                <Pill className="mb-6 text-[var(--color-ebony)] border-[var(--color-ebony)]/20">
-                    O Que Tem Dentro
-                </Pill>
                 <SectionHeader
                     title="Isso é o Assistente Arqui."
                     centered
