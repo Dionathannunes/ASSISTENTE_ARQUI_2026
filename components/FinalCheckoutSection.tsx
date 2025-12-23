@@ -21,26 +21,7 @@ export const FinalCheckoutSection: React.FC = () => {
                 >
 
 
-                    <h2 className="text-4xl md:text-7xl font-['Aboreto'] mb-2 tracking-tighter text-[var(--color-dun)] drop-shadow-xl">
-                        R$ 59<span className="text-2xl md:text-4xl opacity-80 font-normal">/ano</span>
-                    </h2>
-                    <p className="text-[var(--color-dun)] text-lg uppercase tracking-[0.2em] mb-10 font-bold">
-                        Menos de um café por mês
-                    </p>
 
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mb-8"
-                    >
-                        <Button
-                            variant="primary"
-                            className="!bg-[var(--color-sage)] !text-white !border-none !py-6 !px-12 !text-xl !rounded-full w-full md:w-auto shadow-[0_0_50px_rgba(164,172,134,0.4)] hover:shadow-[0_0_80px_rgba(164,172,134,0.6)]"
-                            onClick={() => window.open('https://pay.kiwify.com.br/IjhPkkh', '_blank')}
-                        >
-                            Começar Agora <ArrowRight className="ml-2 w-6 h-6 inline-block" />
-                        </Button>
-                    </motion.div>
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 opacity-80 text-sm md:text-base">
                         <div className="flex items-center gap-2">
