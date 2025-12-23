@@ -23,10 +23,8 @@ const App: React.FC = () => {
         <SocialProofSection />
         <TransformationSection />
         <PricingSection />
-        <CTASection />
         <FAQSection />
         <FounderSection />
-        <FinalCheckoutSection />
       </main>
     </div>
   );
